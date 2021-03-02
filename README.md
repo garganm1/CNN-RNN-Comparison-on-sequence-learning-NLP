@@ -92,10 +92,17 @@ This is a very simple architecture and can be even experimented to find better r
 | Training Accuracy = 98.22% | Training Accuracy = 98.79% |
 | Validation Accuracy = 87.55% | Validation Accuracy = 86.02% |
 
-| Class Count | 1D-CNN (F1 Score) | Bi-Directional LSTM (F1 Score) |
-| ------------- | ------------- | ------------- |
-| 1 | Class 0: 0.93  | Class 0: 0.91  |
-| 1 | Class 0: 0.80  | Class 0: 0.78  |
-| 1 | Class 0: 0.83  | Class 0: 0.82  |
-| 1 | Class 0: 0.99  | Class 0: 0.97  |
-| 1 | Class 0: 0.81  | Class 0: 0.78  |
+The performance is quite comparable between the models. However, there is a slight hint of overfitting with some difference between training and validation accuracy.
+Also worth noting is that the LSTM architecture employes fewer training parameters and a low number of features as opposed to CNN architecture.
+
+Let's look at the F1-score for each publisher on the testing set:-
+
+| Publisher Name | Class Count | 1D-CNN (F1 Score) | Bi-Directional LSTM (F1 Score) |
+| ------------- | ------------- | ------------- | ------------- |
+| Breitbart  | 23781 | 0.93  | 0.91  |
+| New York Post | 17485 | 0.80  | 0.78  |
+| NPR (National Public Radio) | 11654 | 0.83  | 0.82  |
+| Washington Post | 11077 | 0.99  | 0.97  |
+| Reuters | 10709 | 0.81  | 0.78  |
+
+Based on the models's overall performances, the individual class performances are commensurate. Publishers - Breitbart and Washington Post are found to employ a unique writing of their articles which is easily distinguishable from other publishers. The other publishers are not so distinct as the above two (with New York Post and Reuters being least distinguishable) 
