@@ -87,6 +87,7 @@ This is a very simple architecture and can be even experimented to find better r
 | Batch_size = 32  | Batch_size = 32  |
 | Number of parameters trained = 41,742,737  | Number of parameters trained = 17,285,161  |
 | Number of features employed = 12052  | Number of features employed = 500  |
+| Embedding Size = 10  | Embedding Size = 100  |
 | Training Time = 2.1 hrs (on CPU)  | Training Time = 2.3 hrs (on CPU)  |
 | No of Epochs = 4 (patience-2) | No of Epochs = 3 (patience-2) |
 | Training Accuracy = 98.22% | Training Accuracy = 98.79% |
@@ -105,4 +106,6 @@ Let's look at the F1-score for each publisher on the testing set:-
 | Washington Post | 11077 | 0.99  | 0.97  |
 | Reuters | 10709 | 0.81  | 0.78  |
 
-Based on the models's overall performances, the individual class performances are commensurate. Publishers - Breitbart and Washington Post are found to employ a unique writing of their articles which is easily distinguishable from other publishers. The other publishers are not so distinct as the above two (with New York Post and Reuters being least distinguishable) 
+Based on the models's overall performances, the individual class performances are commensurate. Publishers - Breitbart and Washington Post are found to employ a unique writing of their articles which is easily distinguishable from other publishers. The other publishers are not so distinct as the above two (with New York Post and Reuters being least distinguishable)
+
+In summary, CNN architectures are found to perform comparably well as RNN architectures are expected to. CNN architectures apart from their usual application can also be implemented (carefully) to learn sequential data!
