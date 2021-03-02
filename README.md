@@ -4,6 +4,11 @@ This repo deals with sequence learning of articles using CNN and RNN architectur
 
 CNN usually deals with convolutions of tensors such that it tries to find meaningful features in a localized manner depending on kernel size. In this repo, instead of localized transformations, a 1-D CNN will be operated on the sequence of tokenized text to generate feature transformations that learn the sequences within the articles. In contrast, RNN architectures are mainly built to learn the sequences and so, in this repo, a comparison will be made between the performances of a CNN vs RNN architecture on sequence learning.
 
+The data can be found in either links below-
+
+1. GDrive Link - https://drive.google.com/drive/folders/1fxV90otr9Rj6WtXmTIHUQdQO8VOrErkd?usp=sharing
+2. Kaggle Link - https://www.kaggle.com/snapcrack/all-the-news
+
 There are three essential notebooks here-
 
 1. Part 1 deals with cleaning and processing of the data to build the models
