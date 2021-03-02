@@ -1,4 +1,3 @@
-![cnn](https://user-images.githubusercontent.com/55252306/109691209-35cd0f80-7b55-11eb-810d-c2861dae1701.PNG)
 # 1D-CNN-Bi-LSTM-Comparison-on-sequence-learning-NLP
 
 This repo deals with sequence learning of articles using CNN and RNN architectures. The dataset consists of article content, their titles, author names, date of publishing, and the name of publishers. The articles' content will be processed and analyzed to predict the name of the publisher. This would help us tell if the way of writing by publishers is unique to their own as the sequences of articles' content will be learned by the models.
@@ -60,4 +59,4 @@ A dropout, 1-D pooling and flatten layer is applied to each channel with the sam
 
 The flattened features from the three layers are then concatenated together to produce a single set of features which is then passed on to another dense layer that finally gives out an output containing 5 neurons for each label.
 
-![image.png](attachment:cnn.png)
+![cnn](https://user-images.githubusercontent.com/55252306/109691209-35cd0f80-7b55-11eb-810d-c2861dae1701.PNG)
