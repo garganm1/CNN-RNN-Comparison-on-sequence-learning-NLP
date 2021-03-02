@@ -108,4 +108,4 @@ Let's look at the F1-score for each publisher on the testing set:-
 
 Based on the models's overall performances, the individual class performances are commensurate. Publishers - Breitbart and Washington Post are found to employ a unique writing of their articles which is easily distinguishable from other publishers. The other publishers are not so distinct as the above two (with New York Post and Reuters being least distinguishable)
 
-In summary, CNN architectures are found to perform comparably well as RNN architectures are expected to. CNN architectures apart from their usual application can also be implemented (carefully) to learn sequential data!
+In summary, CNN architectures are found to perform comparably well as RNN architectures are expected to. CNN architectures, apart from their usual application, can also be implemented (carefully) to learn sequential data!
