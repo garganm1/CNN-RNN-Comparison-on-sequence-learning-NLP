@@ -59,4 +59,4 @@ A dropout, 1-D pooling and flatten layer is applied to each channel with the sam
 
 The flattened features from the three layers are then concatenated together to produce a single set of features which is then passed on to another dense layer that finally gives out an output containing 5 neurons for each label.
 
-
+![image.png](attachment:image.png)
