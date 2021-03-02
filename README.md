@@ -1,4 +1,4 @@
-# 1D-CNN-Bi-LSTM-Comparison-on-sequence-learning-NLP
+# Comparison of CNN and RNN-LSTM on sequence learning
 
 This repo deals with sequence learning of articles using CNN and RNN architectures. The dataset consists of article content, their titles, author names, date of publishing, and the name of publishers. The articles' content will be processed and analyzed to predict the name of the publisher. This would help us tell if the way of writing by publishers is unique to their own as the sequences of articles' content will be learned by the models.
 
