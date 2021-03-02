@@ -47,7 +47,9 @@ A2 :- [4, 5, 3, 6]
 
 The tokenizer fit on the training set will then encode the testing set as per its word-index dictionary taken from the training set. There are certain dataset parameters that need to be fed to the model viz. maximum length of all articles and the vocabulary size of the training set.
 
-#### CNN Architecture
+length, vocab_size = 12052, 157706 (obtained values)
+
+### CNN Architecture
 
 The model takes three layers as inputs (matrices of encoded vectors of the articles just repeated thrice). Each layer is evaluated as a separate channel with a different kernel_size that traverses and convolutes with the vectors.
 
@@ -59,4 +61,41 @@ A dropout, 1-D pooling and flatten layer is applied to each channel with the sam
 
 The flattened features from the three layers are then concatenated together to produce a single set of features which is then passed on to another dense layer that finally gives out an output containing 5 neurons for each label.
 
+A similar architecture for reference is provided below -
+
 ![cnn](https://user-images.githubusercontent.com/55252306/109691209-35cd0f80-7b55-11eb-810d-c2861dae1701.PNG)
+
+## Part 3: BiDirectional LSTM model
+
+The same tokenized and padded training and testing dataset is now modeled using a very simple Bi-Directional LSTM architecture. There is a tiny modification as the whole length of article will not be fed due to cost and time constraints i.e. out of 12052 features, the first 500 words of each article is fed to the model.
+
+An input shape of 500 length is chosen for each article which produces a 100 sized vector using the Embedding layer of each word (as compared to 10 sized in CNN)
+
+The bi-directional LSTM layer then runs on the vectors to learn the sequences from both ends (forwards and backwards)
+
+The output is flattened and then fed to dense layers which finally produce the output of probability of 5 classes which get softmax activated finally
+
+This is a very simple architecture and can be even experimented to find better results. The image below encapsulated the Bi-Directional LSTM model beyond which the Flattening and Dense layers are applied to generate the target.
+
+![bidirlstm](https://user-images.githubusercontent.com/55252306/109692200-3d40e880-7b56-11eb-8f97-0ef781d5a7bb.png)
+
+## Comparison between the architectures
+
+
+| 1D-CNN   | Bi-Directional LSTM |
+| ------------- | ------------- |
+| Batch_size = 32  | Batch_size = 32  |
+| Number of parameters trained = 41,742,737  | Number of parameters trained = 17,285,161  |
+| Number of features employed = 12052  | Number of features employed = 500  |
+| Training Time = 2.1 hrs (on CPU)  | Training Time = 2.3 hrs (on CPU)  |
+| No of Epochs = 4 (patience-2) | No of Epochs = 3 (patience-2) |
+| Training Accuracy = 98.22% | Training Accuracy = 98.79% |
+| Validation Accuracy = 87.55% | Validation Accuracy = 86.02% |
+
+| Class Count | 1D-CNN (F1 Score) | Bi-Directional LSTM (F1 Score) |
+| ------------- | ------------- | ------------- |
+| 1 | Class 0: 0.93  | Class 0: 0.91  |
+| 1 | Class 0: 0.80  | Class 0: 0.78  |
+| 1 | Class 0: 0.83  | Class 0: 0.82  |
+| 1 | Class 0: 0.99  | Class 0: 0.97  |
+| 1 | Class 0: 0.81  | Class 0: 0.78  |
